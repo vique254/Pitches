@@ -1,6 +1,6 @@
 from flask import render_template
 from . import main
-
+from flask_login import login_required
 # Views
 @main.route('/')
 def index():
@@ -10,7 +10,8 @@ def index():
     title = 'Home - welcome to world of Pitches'
     return render_template('index.html',title = title)
 
-@main.route('/pitch/<int:pitch_id>')
+@main.route('/pitch/<int:pitch_id>',methods =['GET','POST'])
+@login_required
 def pitch(pitch_id):
 
     '''
