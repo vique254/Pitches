@@ -9,7 +9,7 @@ def index():
     '''
     return render_template('index.html')
 
-@main.route('/pitch/<pitch_id>')
+@main.route('/pitch/<int:pitch_id>')
 def pitch(pitch_id):
 
     '''
